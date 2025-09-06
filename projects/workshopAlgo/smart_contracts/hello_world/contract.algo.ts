@@ -1,15 +1,17 @@
 import { Contract, GlobalState } from '@algorandfoundation/algorand-typescript';
 
 export class StudentRecord extends Contract {
-  // GlobalState to store student records as a JSON string
-  records = GlobalState<string>({ key: "records", initialValue: "{}" });
+  // Single global state key
+  studentName = GlobalState<string>({ key: "studentName", initialValue: "" });
+  grade = GlobalState<string>({ key: "grade", initialValue: "" });
 
-  // Add or update a student record with studentName and grade
-  AddRecord(studentName: string, grade: string): string {
-    let currentRecords = JSON.parse(this.records.value);
-    currentRecords[studentName] = grade; // store or update grade for student
-    this.records.value = JSON.stringify(currentRecords);
-    return studentName;
+  AddRecord(name: string, g: string): string {
+    this.studentName.value = name;
+    this.grade.value = g;
+    return name;
+  }
+
+  GetRecord(): string {
+    return `${this.studentName.value}: ${this.grade.value}`;
   }
 }
-//hello
