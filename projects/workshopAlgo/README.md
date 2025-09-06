@@ -32,8 +32,8 @@ It allows you to **store and retrieve a student's name and grade** in Algorandâ€
 
 ## ðŸ”— Deployed Smart Contract
 
-Contract Address: **XXX**  
-   
+Contract Address: **75PB7AYG2UQV4FYOWPEWWCFGPL6TJIV7RR6QXHQQBMRBA2FSSYJ6TTPTRI**  
+
 
 ---
 
