@@ -1,22 +1,60 @@
-# workshopAlgo
+# 🎓 Student Record dApp on Algorand
 
-Welcome to your new AlgoKit project!
+A simple decentralized application (dApp) built on **Algorand** using **Algorand TypeScript SDK**.  
+This project demonstrates how to create and manage a student record system directly on the blockchain.
 
-This is your workspace root. A `workspace` in AlgoKit is an orchestrated collection of standalone projects (backends, smart contracts, frontend apps and etc).
+---
 
-By default, `projects_root_path` parameter is set to `projects`. Which instructs AlgoKit CLI to create a new directory under `projects` directory when new project is instantiated via `algokit init` at the root of the workspace.
+## 📖 Project Description
 
-## Getting Started
+This project showcases a beginner-friendly smart contract written in **TypeScript** for the Algorand blockchain.  
+It allows you to **store and retrieve a student's name and grade** in Algorand’s **global state**, ensuring transparency, security, and immutability.
 
-To get started refer to `README.md` files in respective sub-projects in the `projects` directory.
+---
 
-To learn more about algokit, visit [documentation](https://github.com/algorandfoundation/algokit-cli/blob/main/docs/algokit.md).
+## ⚡ What it does
 
-### GitHub Codespaces
+- Stores a single student’s **name** and **grade** on the blockchain.  
+- Updates records seamlessly by calling the `AddRecord` method.  
+- Retrieves the stored record using the `GetRecord` method.  
+- Ensures that student data is securely maintained on-chain.  
 
-To get started execute:
+---
 
-1. `algokit generate devcontainer` - invoking this command from the root of this repository will create a `devcontainer.json` file with all the configuration needed to run this project in a GitHub codespace. [Run the repository inside a codespace](https://docs.github.com/en/codespaces/getting-started/quickstart) to get started.
-2. `algokit init` - invoke this command inside a github codespace to launch an interactive wizard to guide you through the process of creating a new AlgoKit project
+## ✨ Features
 
-Powered by [Copier templates](https://copier.readthedocs.io/en/stable/).
+- ✅ **Built with Algorand TypeScript** – clean and readable code  
+- ✅ **Immutable & Secure** – once stored, records live on-chain  
+- ✅ **Beginner Friendly** – minimal contract, great starting point for learning  
+- ✅ **Extendable** – can be expanded to support multiple students using Boxes  
+
+---
+
+## 🔗 Deployed Smart Contract
+
+Contract Address: **XXX**  
+   
+
+---
+
+## 🛠️ Smart Contract Code
+
+```typescript
+// paste your code
+import { Contract, GlobalState } from '@algorandfoundation/algorand-typescript';
+
+export class StudentRecord extends Contract {
+  // Single global state key
+  studentName = GlobalState<string>({ key: "studentName", initialValue: "" });
+  grade = GlobalState<string>({ key: "grade", initialValue: "" });
+
+  AddRecord(name: string, g: string): string {
+    this.studentName.value = name;
+    this.grade.value = g;
+    return name;
+  }
+
+  GetRecord(): string {
+    return `${this.studentName.value}: ${this.grade.value}`;
+  }
+}
