@@ -62,4 +62,4 @@ export class StudentRecord extends Contract {
 
 ```
 
-![](IMG-20250906-WA0023.jpg)
+![](lora.png)
