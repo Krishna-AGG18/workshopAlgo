@@ -40,7 +40,6 @@ Contract Address: **XXX**
 ## 🛠️ Smart Contract Code
 
 ```typescript
-// paste your code
 import { Contract, GlobalState } from '@algorandfoundation/algorand-typescript';
 
 export class StudentRecord extends Contract {
