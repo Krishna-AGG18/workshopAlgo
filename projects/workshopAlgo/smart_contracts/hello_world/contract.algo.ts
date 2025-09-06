@@ -12,3 +12,4 @@ export class StudentRecord extends Contract {
     return studentName;
   }
 }
+//hello
