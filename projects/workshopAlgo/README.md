@@ -33,7 +33,7 @@ It allows you to **store and retrieve a student's name and grade** in Algorandâ€
 ## ðŸ”— Deployed Smart Contract
 
 Contract Address: **XXX**  
-*(Replace `XXX` with your deployed contract address once live)*
+   
 
 ---
 
