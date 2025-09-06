@@ -57,4 +57,9 @@ export class StudentRecord extends Contract {
     return `${this.studentName.value}: ${this.grade.value}`;
   }
 }
+
+
+
+```
+
 ![](IMG-20250906-WA0023.png)
